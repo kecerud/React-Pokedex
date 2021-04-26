@@ -1,0 +1,76 @@
+.type-icon {
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  vertical-align: middle;
+}
+.type-icon img {
+  height: 60%;
+  width: 60%;
+  margin: 20%;
+}
+
+@media (max-width: 800px) {
+  .type-icon {
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    vertical-align: middle;
+  }
+}
+.bug {
+  background: #92bc2c;
+}
+
+.dark {
+  background: #5b5366;
+}
+.dragon {
+  background: #755edf;
+}
+.electric {
+  background: #f2d94e;
+}
+.fairy {
+  background: #f4b1f4;
+}
+.fighting {
+  background: #d3425f;
+}
+.fire {
+  background: #fba54c;
+}
+.flying {
+  background: #a1bbec;
+}
+.ghost {
+  background: #5f6dbc;
+}
+.grass {
+  background: #5fbd58;
+}
+.ground {
+  background: #da7c4d;
+}
+.ice {
+  background: #75d0c1;
+}
+.normal {
+  background: #c8c4bc;
+}
+.poison {
+  background: #b97fc9;
+}
+.psychic {
+  background: #ed4882;
+}
+.rock {
+  background: #b9a156;
+}
+.steel {
+  background: #5695a3;
+}
+.water {
+  background: #3295f6;
+}

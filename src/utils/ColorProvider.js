@@ -1,0 +1,21 @@
+const TYPE_COLORS = {
+  bug: '#92bc2c',
+  dark: '#5B5366',
+  dragon: '#755EDF',
+  electric: '#F2D94E',
+  fairy: '#F4B1F4',
+  fighting: '#d3425f',
+  fire: '#fba54c',
+  flying: '#a1bbec',
+  ghost: '#5f6dbc',
+  grass: '#5fbd58',
+  ground: '#da7c4d',
+  ice: '#75d0c1',
+  normal: '#C8C4BC',
+  poison: '#B97FC9',
+  psychic: '#ED4882',
+  rock: '#B9A156',
+  steel: '#5695a3',
+  water: '#3295F6',
+};
+export default TYPE_COLORS;
