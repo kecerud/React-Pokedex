@@ -141,9 +141,12 @@
 .pokemon-card-evolution h4 {
   text-align: center;
 }
-@media (min-width: 300px) {
+@media (max-width: 520px) {
   .pokemon-card-evolution {
     width: 42%;
+  }
+  .pokemon-moveset {
+    width: 100%;
   }
 }
 @media (min-width: 520px) {
