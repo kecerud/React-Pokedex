@@ -64,6 +64,17 @@
   justify-content: center;
   height: 100%;
 }
+.pokemon-moveset {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.pokemon-moveset--link {
+  padding: 10px;
+  border-radius: 10px;
+}
 .pokemon-main-div .grass {
   background: #5fbd58;
 }

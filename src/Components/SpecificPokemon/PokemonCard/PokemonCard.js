@@ -78,7 +78,15 @@ const PokemonCard = ({
               </div>
             </div>
           </div>
-
+          <div className='row'>
+            <div className='col'>
+              <div className='pokemon-moveset'>
+                <div className='normal pokemon-moveset--link'>
+                  <h2>Moveset</h2>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className='row'>
             <div className='col'>
               <div className={`evolutions-box ${pokemonType[0]}`}>
