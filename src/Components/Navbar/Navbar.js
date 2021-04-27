@@ -8,7 +8,7 @@ const Navbar = () => {
       </Link>
 
       <div className='links'>
-        <a href='https://github.com/kecerud'>Github</a>
+        <a href='https://github.com/kecerud/React-Pokedex'>Github</a>
       </div>
     </nav>
   );
