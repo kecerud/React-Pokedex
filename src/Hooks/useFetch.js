@@ -60,41 +60,21 @@ const useFetch = (url, url2) => {
           );
           evolutionsImages.push(...fetchingEeveeImages);
         } else {
-          // pushing 3 evolutions into the evolutions array
+          // getting up to 3 evolutions
           const evo1 = chainData.chain.species?.name;
           const evo2 = chainData.chain?.evolves_to[0]?.species.name;
           const evo3 =
             chainData.chain?.evolves_to[0]?.evolves_to[0]?.species.name;
-
-          if (evo1) {
-            evolutions.push(evo1);
-            const img1Fetch = await fetch(
-              `https://pokeapi.co/api/v2/pokemon/${evo1}`
+          // pushing the evolutions names and images
+          for (const evo of [evo1, evo2, evo3]) {
+            evolutions.push(evo);
+            const imgFetch = await fetch(
+              `https://pokeapi.co/api/v2/pokemon/${evo}`
             );
-            const resImg1 = await img1Fetch.json();
-            const evoImg1 =
-              resImg1.sprites.other['official-artwork'].front_default;
-            evolutionsImages.push(evoImg1);
-          }
-          if (evo2) {
-            evolutions.push(evo2);
-            const img2Fetch = await fetch(
-              `https://pokeapi.co/api/v2/pokemon/${evo2}`
-            );
-            const resImg2 = await img2Fetch.json();
-            const evoImg2 =
-              resImg2.sprites.other['official-artwork'].front_default;
-            evolutionsImages.push(evoImg2);
-          }
-          if (evo3) {
-            evolutions.push(evo3);
-            const img3Fetch = await fetch(
-              `https://pokeapi.co/api/v2/pokemon/${evo3}`
-            );
-            const resImg3 = await img3Fetch.json();
-            const evoImg3 =
-              resImg3.sprites.other['official-artwork'].front_default;
-            evolutionsImages.push(evoImg3);
+            const evoImg = (await imgFetch.json()).sprites.other[
+              'official-artwork'
+            ].front_default;
+            evolutionsImages.push(evoImg);
           }
         }
 
