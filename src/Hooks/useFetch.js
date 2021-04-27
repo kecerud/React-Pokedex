@@ -106,7 +106,6 @@ const useFetch = (url, url2) => {
         setPokemonBio(bioText);
         setPokemonEvolutionImages(evolutionsImages);
         setPokemonEvolution(evolutions);
-        // fetching images of evolutions
       } catch (error) {
         console.log(error);
       }
