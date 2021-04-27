@@ -45,17 +45,13 @@ const useFetch = (url, url2) => {
           //Looping over evolutions array (which contains eevee + all of its evolutions) and adding its image to each evolution
           const fetchingEeveeImages = await Promise.all(
             evolutions.map(async (evo) => {
-              try {
-                const imgFetch = await fetch(
-                  `https://pokeapi.co/api/v2/pokemon/${evo}`
-                );
-                const resImg = await imgFetch.json();
-                const evoImg =
-                  resImg.sprites.other['official-artwork'].front_default;
-                return evoImg;
-              } catch (error) {
-                console.log(error);
-              }
+              const imgFetch = await fetch(
+                `https://pokeapi.co/api/v2/pokemon/${evo}`
+              );
+              const resImg = await imgFetch.json();
+              const evoImg =
+                resImg.sprites.other['official-artwork'].front_default;
+              return evoImg;
             })
           );
           evolutionsImages.push(...fetchingEeveeImages);
