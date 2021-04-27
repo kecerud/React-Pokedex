@@ -75,6 +75,9 @@
   padding: 10px;
   border-radius: 10px;
 }
+.pokemon-moveset--link h2 {
+  color: #fff;
+}
 .pokemon-main-div .grass {
   background: #5fbd58;
 }

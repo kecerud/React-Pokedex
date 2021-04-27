@@ -81,7 +81,7 @@ const PokemonCard = ({
           <div className='row'>
             <div className='col'>
               <div className='pokemon-moveset'>
-                <div className='normal pokemon-moveset--link'>
+                <div className={`${pokemonType[0]} pokemon-moveset--link`}>
                   <h2>Moveset</h2>
                 </div>
               </div>
