@@ -38,9 +38,10 @@ const useFetch = (url, url2) => {
           //eevee itself
           evolutions.push(chainData.chain.species.name);
           //eevee evolutions
-          chainData.chain.evolves_to.map((item) =>
+          chainData.chain.evolves_to.forEach((item) =>
             evolutions.push(item.species.name)
           );
+
           //Looping over evolutions array (which contains eevee + all of its evolutions) and adding its image to each evolution
           const fetchingEeveeImages = await Promise.all(
             evolutions.map(async (evo) => {
