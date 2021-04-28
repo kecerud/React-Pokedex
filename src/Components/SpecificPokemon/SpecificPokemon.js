@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import PokemonCard from 'Components/SpecificPokemon/PokemonCard/PokemonCard';
 import SearchBar from 'Components/SearchBar/SearchBar';
+import PokemonMoveset from 'Components/SpecificPokemon/PokemonMoveset/PokemonMoveset';
 import useFetch from 'Hooks/useFetch';
+import useGetMoveset from 'Hooks/useGetMoveset';
 import { useParams } from 'react-router';
 import 'Styles/iconStyles.css';
 import TYPE_COLORS from 'utils/ColorProvider';
 import TYPE_ICONS from 'utils/IconProvider';
-import PokemonMoveset from 'Components/SpecificPokemon/PokemonMoveset/PokemonMoveset';
-
 const SpecificPokemon = () => {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState(id);
   const [pokemonHelper, setPokemonHelper] = useState(null);
-  const [pokemonMoves, setPokemonMoves] = useState(null);
+  const [pokemonMoves, setpokemonMoves] = useState(null);
   const {
     pokemonData,
     pokemonType,
@@ -25,7 +25,9 @@ const SpecificPokemon = () => {
     `https://pokeapi.co/api/v2/pokemon/${pokemon}`,
     `https://pokeapi.co/api/v2/pokemon-species/${pokemon}`
   );
-
+  const movesetList = useGetMoveset(
+    `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+  );
   const handleChange = (e) => {
     setPokemonHelper(e.target.value.toLowerCase());
   };
@@ -45,12 +47,12 @@ const SpecificPokemon = () => {
   };
   const handleRedirectMoveset = (e) => {
     e.preventDefault();
-    setPokemonMoves(pokemon);
+    setpokemonMoves(pokemon);
   };
 
   const handleRedirectBackToPokemon = (e) => {
     e.preventDefault();
-    setPokemonMoves(null);
+    setpokemonMoves(null);
   };
   return (
     <div className='main'>
@@ -63,6 +65,7 @@ const SpecificPokemon = () => {
       {isPending && !noPokemonFound && <div className='loader'></div>}
       {pokemonMoves && (
         <PokemonMoveset
+          movesetList={movesetList}
           handleRedirectBackToPokemon={handleRedirectBackToPokemon}
         />
       )}
