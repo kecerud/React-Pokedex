@@ -9,6 +9,7 @@ const PokemonCard = ({
   typeColors,
   typeIcons,
   handleRedirectEvolution,
+  handleRedirectMoveset,
 }) => {
   return (
     <div className='div-result jumbotron'>
@@ -81,7 +82,10 @@ const PokemonCard = ({
           <div className='row'>
             <div className='col'>
               <div className='pokemon-moveset'>
-                <div className={`${pokemonType[0]} pokemon-moveset--link`}>
+                <div
+                  className={`${pokemonType[0]} pokemon-moveset--link`}
+                  onClick={handleRedirectMoveset}
+                >
                   <h2>Moveset</h2>
                 </div>
               </div>

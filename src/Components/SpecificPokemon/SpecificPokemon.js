@@ -6,11 +6,13 @@ import { useParams } from 'react-router';
 import 'Styles/iconStyles.css';
 import TYPE_COLORS from 'utils/ColorProvider';
 import TYPE_ICONS from 'utils/IconProvider';
+import PokemonMoveset from 'Components/SpecificPokemon/PokemonMoveset/PokemonMoveset';
 
 const SpecificPokemon = () => {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState(id);
   const [pokemonHelper, setPokemonHelper] = useState(null);
+  const [pokemonMoves, setPokemonMoves] = useState(null);
   const {
     pokemonData,
     pokemonType,
@@ -41,7 +43,15 @@ const SpecificPokemon = () => {
     setPokemon(pokemonEvo.toLowerCase());
     window.history.replaceState(null, ``, `/pokemon/${pokemonEvo}`);
   };
+  const handleRedirectMoveset = (e) => {
+    e.preventDefault();
+    setPokemonMoves(pokemon);
+  };
 
+  const handleRedirectBackToPokemon = (e) => {
+    e.preventDefault();
+    setPokemonMoves(null);
+  };
   return (
     <div className='main'>
       <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
@@ -49,7 +59,12 @@ const SpecificPokemon = () => {
         <div>No such pokemon exists! Try searching again.. </div>
       )}
       {isPending && !noPokemonFound && <div className='loader'></div>}
-      {!isPending && pokemonEvolution && pokemonBio && (
+      {pokemonMoves && (
+        <PokemonMoveset
+          handleRedirectBackToPokemon={handleRedirectBackToPokemon}
+        />
+      )}
+      {!isPending && pokemonEvolution && pokemonBio && !pokemonMoves && (
         <PokemonCard
           pokemonData={pokemonData}
           pokemonType={pokemonType}
@@ -59,6 +74,7 @@ const SpecificPokemon = () => {
           typeColors={TYPE_COLORS}
           typeIcons={TYPE_ICONS}
           handleRedirectEvolution={handleRedirectEvolution}
+          handleRedirectMoveset={handleRedirectMoveset}
         />
       )}
     </div>
