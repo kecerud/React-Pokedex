@@ -41,20 +41,16 @@ const useFetch = (url, url2) => {
           chainData.chain.evolves_to.forEach((item) =>
             evolutions.push(item.species.name)
           );
-
           //Looping over evolutions array (which contains eevee + all of its evolutions) and adding its image to each evolution
-          const fetchingEeveeImages = await Promise.all(
-            evolutions.map(async (evo) => {
-              const imgFetch = await fetch(
-                `https://pokeapi.co/api/v2/pokemon/${evo}`
-              );
-              const resImg = await imgFetch.json();
-              const evoImg =
-                resImg.sprites.other['official-artwork'].front_default;
-              return evoImg;
-            })
-          );
-          evolutionsImages.push(...fetchingEeveeImages);
+          for (const evo of evolutions) {
+            const imgFetch = await fetch(
+              `https://pokeapi.co/api/v2/pokemon/${evo}`
+            );
+            const evoImg = (await imgFetch.json()).sprites.other[
+              'official-artwork'
+            ].front_default;
+            evolutionsImages.push(evoImg);
+          }
         } else {
           // getting up to 3 evolutions
           const evo1 = chainData.chain.species?.name;
