@@ -59,6 +59,7 @@ const useFetch = (url, url2) => {
             chainData.chain?.evolves_to[0]?.evolves_to[0]?.species.name;
           // pushing the evolutions names and images
           for (const evo of [evo1, evo2, evo3]) {
+            if (!evo) break;
             evolutions.push(evo);
             const imgFetch = await fetch(
               `https://pokeapi.co/api/v2/pokemon/${evo}`
@@ -80,7 +81,7 @@ const useFetch = (url, url2) => {
         setPokemonEvolutionImages(evolutionsImages);
         setPokemonEvolution(evolutions);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     getPokemon();
