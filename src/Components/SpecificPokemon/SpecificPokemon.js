@@ -54,7 +54,9 @@ const SpecificPokemon = () => {
   };
   return (
     <div className='main'>
-      <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
+      {!pokemonMoves && (
+        <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} />
+      )}
       {noPokemonFound && (
         <div>No such pokemon exists! Try searching again.. </div>
       )}
