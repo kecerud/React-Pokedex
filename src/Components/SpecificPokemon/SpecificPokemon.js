@@ -7,7 +7,9 @@ import useGetMoveset from 'Hooks/useGetMoveset';
 import { useParams } from 'react-router';
 import 'Styles/iconStyles.css';
 import TYPE_COLORS from 'Utils/ColorProvider';
-import TYPE_ICONS from 'Utils/IconProvider';
+import TYPE_ICONS from 'Utils/PokemonTypeIconProvider';
+import MOVE_ICONS from 'Utils/MoveTypeIconProvider';
+
 const SpecificPokemon = () => {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState(id);
@@ -66,6 +68,7 @@ const SpecificPokemon = () => {
       {pokemonMoves && (
         <PokemonMoveset
           movesetList={movesetList}
+          moveIcons={MOVE_ICONS}
           handleRedirectBackToPokemon={handleRedirectBackToPokemon}
         />
       )}
