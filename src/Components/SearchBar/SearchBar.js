@@ -1,4 +1,4 @@
-import 'Components/SearchBar/search.css';
+import './search.css';
 
 const SearchBar = ({ handleSubmit, handleChange }) => {
   return (

@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import PokemonCard from 'Components/SpecificPokemon/PokemonCard/PokemonCard';
-import SearchBar from 'Components/SearchBar/SearchBar';
-import PokemonMoveset from 'Components/SpecificPokemon/PokemonMoveset/PokemonMoveset';
-import useFetch from 'Hooks/useFetch';
-import useGetMoveset from 'Hooks/useGetMoveset';
+import PokemonCard from './PokemonCard/PokemonCard';
+import SearchBar from '../SearchBar/SearchBar';
+import PokemonMoveset from './PokemonMoveset/PokemonMoveset';
+import useFetch from '../../Hooks/useFetch';
+import useGetMoveset from '../../Hooks/useGetMoveset';
 import { useParams } from 'react-router';
-import 'Styles/iconStyles.css';
-import TYPE_COLORS from 'Utils/ColorProvider';
-import TYPE_ICONS from 'Utils/PokemonTypeIconProvider';
-import MOVE_ICONS from 'Utils/MoveTypeIconProvider';
+import '../../Styles/iconStyles.css';
+import TYPE_COLORS from '../../Utils/ColorProvider';
+import TYPE_ICONS from '../../Utils/PokemonTypeIconProvider';
+import MOVE_ICONS from '../../Utils/MoveTypeIconProvider';
 
 const SpecificPokemon = () => {
   const { id } = useParams();

@@ -1,4 +1,4 @@
-import 'Components/SpecificPokemon/PokemonMoveset/pokemonMoveset.css';
+import './pokemonMoveset.css';
 
 const PokemonMoveset = ({
   movesetList,

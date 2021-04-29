@@ -1,12 +1,12 @@
-import Navbar from 'Components/Navbar/Navbar';
-import Home from 'Components/Home/Home';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Components/Home/Home';
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
 } from 'react-router-dom';
-import SpecificPokemon from 'Components/SpecificPokemon/SpecificPokemon';
+import SpecificPokemon from './Components/SpecificPokemon/SpecificPokemon';
 function App() {
   return (
     <Router>

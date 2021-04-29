@@ -1,4 +1,4 @@
-import 'Components/SpecificPokemon/PokemonCard/pokemonCard.css';
+import './pokemonCard.css';
 
 const PokemonCard = ({
   pokemonData,

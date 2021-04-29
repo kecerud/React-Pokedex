@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import PokemonGrid from 'Components/Home/PokemonGrid/PokemonGrid';
-import SearchBar from 'Components/SearchBar/SearchBar';
-import 'Components/Home/home.css';
+import PokemonGrid from './PokemonGrid/PokemonGrid';
+import SearchBar from '../SearchBar/SearchBar';
+import './home.css';
 import { useHistory, useParams } from 'react-router-dom';
-import TYPE_COLORS from 'Utils/ColorProvider';
+import TYPE_COLORS from '../../Utils/ColorProvider';
 
 const Home = () => {
   const history = useHistory();

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import 'Components/Home/PokemonGrid/pokemonGrid.css';
+import './pokemonGrid.css';
 
 function PokemonGrid({ pokemon, typeColors }) {
   return (
