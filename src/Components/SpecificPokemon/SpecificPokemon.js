@@ -6,8 +6,8 @@ import useFetch from 'Hooks/useFetch';
 import useGetMoveset from 'Hooks/useGetMoveset';
 import { useParams } from 'react-router';
 import 'Styles/iconStyles.css';
-import TYPE_COLORS from 'utils/ColorProvider';
-import TYPE_ICONS from 'utils/IconProvider';
+import TYPE_COLORS from 'Utils/ColorProvider';
+import TYPE_ICONS from 'Utils/IconProvider';
 const SpecificPokemon = () => {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState(id);
