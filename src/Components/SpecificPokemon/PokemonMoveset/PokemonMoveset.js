@@ -7,7 +7,7 @@ const PokemonMoveset = ({
   handleRedirectBackToPokemon,
 }) => {
   return (
-    <div className='div-result jumbotron2 main'>
+    <div className='div-result moveset-jumbotron main'>
       <h1 onClick={handleRedirectBackToPokemon} className='redirect-text'>
         Back to Pokémon
       </h1>
@@ -27,7 +27,6 @@ const PokemonMoveset = ({
                     background: `${typeColors[move.type]}`,
                     padding: '5px 10px',
                     borderRadius: '5px',
-                    // marginLeft: '5px',
                   }}
                 >
                   {move.type}

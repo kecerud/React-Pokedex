@@ -1,4 +1,3 @@
-/* --------------------  SpecificPokemonCard layout -------------- */
 .move-card {
   margin-top: 20px;
   justify-content: center;
@@ -31,9 +30,6 @@
   justify-content: center;
 }
 
-.grid-item {
-  border: 2px solid blue;
-}
 .main {
   display: flex;
   flex-direction: column;
@@ -55,7 +51,7 @@
   box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
-.jumbotron2 {
+.moveset-jumbotron {
   padding: 10px;
   margin-bottom: 0;
   margin-top: 50px;

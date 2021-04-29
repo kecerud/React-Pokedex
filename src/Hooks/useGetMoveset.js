@@ -17,7 +17,6 @@ const useGetMoveset = (url) => {
         });
 
         for (const { move } of allMoves) {
-          //0
           const url = move.url;
           const resUrl = await fetch(url);
           const dataUrl = await resUrl.json();
@@ -29,9 +28,7 @@ const useGetMoveset = (url) => {
             type: moveType2,
           });
         }
-        console.log(allMovesArr);
         setMovesetList(allMovesArr);
-        // const detailsMoves
       } catch (error) {
         console.error(error);
       }
