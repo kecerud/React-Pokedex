@@ -30,6 +30,7 @@ const SpecificPokemon = () => {
   const movesetList = useGetMoveset(
     `https://pokeapi.co/api/v2/pokemon/${pokemon}`
   );
+
   const handleChange = (e) => {
     setPokemonHelper(e.target.value.toLowerCase());
   };
@@ -69,6 +70,7 @@ const SpecificPokemon = () => {
         <PokemonMoveset
           movesetList={movesetList}
           moveIcons={MOVE_ICONS}
+          typeColors={TYPE_COLORS}
           handleRedirectBackToPokemon={handleRedirectBackToPokemon}
         />
       )}
